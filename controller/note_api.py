@@ -23,3 +23,16 @@ def delete_note(note_id):
     if service.delete_note(note_id):
         return "", 204
     return {"error": "Not found"}, 404
+
+@note_api.route("/api/notes/<int:note_id>", methods=["PATCH"])
+def update_note(note_id):
+    data = request.json
+    note = service.get_note(note_id)
+    if not note:
+        return {"error": "Not found"}, 404
+
+    
+    title = data.get("title", note["title"])
+    content = data.get("content", note["content"])
+    service.update_note(note_id, title, content)
+    return {"message": "Note updated"}, 200
