@@ -19,3 +19,10 @@ class NoteService:
             self.repository.delete(note_id)
             return True
         return False
+    
+    def update_note(self, note_id, title, content):
+        note = self.repository.find_by_id(note_id)
+        if note:
+            self.repository.update(note_id, title, content)
+            return True
+        return False
