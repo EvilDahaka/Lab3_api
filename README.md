@@ -3,6 +3,7 @@
 ## Запуск проекту
 
 1. Створити та активувати віртуальне середовище
+
 # Windows PowerShell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
@@ -12,6 +13,7 @@ python -m venv venv
 source venv/bin/activate
 2. Встановити Flask:
 pip install flask
+
 3. Запуск проекта:
 python app.py
 
