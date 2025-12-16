@@ -24,20 +24,6 @@ def create_note_page():
         return redirect("/notes")
     return render_template("create_note.html")
 
-@note_web.route("/notes/edit/<int:note_id>", methods=["GET", "POST"])
-def edit_note_page(note_id):
-    note = service.get_note(note_id)
-    if not note:
-        return "Not found", 404  
-
-    if request.method == "POST":
-        title = request.form["title"]
-        content = request.form["content"]
-        service.repository.update(note_id, title, content)
-        return redirect("/notes")
-
-    return render_template("edit_note.html", note=note)
-
 
 @note_web.route("/notes/delete/<int:note_id>", methods=["GET", "POST"])
 def delete_note_page(note_id):
@@ -50,5 +36,21 @@ def delete_note_page(note_id):
         return redirect("/notes")
 
     return render_template("delete_note.html", note=note)
+
+
+@note_web.route("/notes/edit/<int:note_id>", methods=["GET", "POST"])
+def edit_note_page(note_id):
+    note = service.get_note(note_id)
+    if not note:
+        return "Not found", 404
+    if request.method == "POST":
+        service.update_note(
+            note_id,
+            request.form["title"],
+            request.form["content"]
+        )
+        return redirect("/notes")
+    return render_template("edit_note.html", note=note)
+
 
 
