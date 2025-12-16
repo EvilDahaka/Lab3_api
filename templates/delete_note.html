@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Видалити нотатку</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Видалити нотатку</h2>
+    <p>Ви впевнені, що хочете видалити нотатку: <b>{{ note['title'] }}</b>?</p>
+    <form method="post">
+        <button type="submit">Видалити</button>
+        <a class="button" href="/notes">Скасувати</a>
+    </form>
+</body>
+</html>

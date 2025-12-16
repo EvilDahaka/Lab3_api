@@ -1,6 +1,17 @@
-<h2>Створити нотатку</h2>
-<form method="post">
-    <input name="title" placeholder="Заголовок" required><br><br>
-    <textarea name="content" placeholder="Текст" required></textarea><br><br>
-    <button type="submit">Зберегти</button>
-</form>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Створити нотатку</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Створити нотатку</h2>
+    <form method="post">
+        <input name="title" placeholder="Заголовок" required>
+        <textarea name="content" placeholder="Текст" required></textarea>
+        <button type="submit">Зберегти</button>
+    </form>
+    <a class="button" href="/notes">Назад до нотаток</a>
+</body>
+</html>

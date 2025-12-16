@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Редагувати нотатку</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Редагувати нотатку</h2>
+    <form method="post">
+        <input name="title" value="{{ note['title'] }}" required>
+        <textarea name="content" required>{{ note['content'] }}</textarea>
+        <button type="submit">Оновити</button>
+    </form>
+    <a class="button" href="/notes">Назад до нотаток</a>
+</body>
+</html>

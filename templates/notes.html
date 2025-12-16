@@ -1,9 +1,21 @@
-<h2>Нотатки</h2>
-<ul>
-    {% for note in notes %}
-        <li>
-            <b>{{ note["title"] }}</b> — {{ note["content"] }}
-        </li>
-    {% endfor %}
-</ul>
-<a href="/notes/create">Додати нотатку</a>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Нотатки</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Нотатки</h2>
+    <ul>
+        {% for note in notes %}
+            <li>
+                <b>{{ note['title'] }}</b> — {{ note['content'] }}
+                <a class="button" href="/notes/edit/{{ note['id'] }}">Редагувати</a>
+                <a class="button" href="/notes/delete/{{ note['id'] }}">Видалити</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a class="button" href="/notes/create">Додати нотатку</a>
+</body>
+</html>
