@@ -6,12 +6,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>Редагувати нотатку</h2>
-    <form method="post">
-        <input name="title" value="{{ note['title'] }}" required>
-        <textarea name="content" required>{{ note['content'] }}</textarea>
-        <button type="submit">Оновити</button>
-    </form>
-    <a class="button" href="/notes">Назад до нотаток</a>
+
+<h2>Редагувати нотатку</h2>
+
+<form method="post" class="note-form">
+    <input name="title" placeholder="Заголовок" value="{{ note['title'] }}" required><br><br>
+    <textarea name="content" placeholder="Текст" required>{{ note['content'] }}</textarea><br><br>
+    <button type="submit" class="btn">Оновити</button>
+</form>
+
+<a href="/notes" class="btn">Назад</a>
+
 </body>
 </html>
