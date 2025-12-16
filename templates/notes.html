@@ -1,0 +1,9 @@
+<h2>Нотатки</h2>
+<ul>
+    {% for note in notes %}
+        <li>
+            <b>{{ note["title"] }}</b> — {{ note["content"] }}
+        </li>
+    {% endfor %}
+</ul>
+<a href="/notes/create">Додати нотатку</a>
