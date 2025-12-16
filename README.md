@@ -20,9 +20,11 @@ python -m venv venv
 source venv/bin/activate
 
 2. Встановити Flask:
+
 pip install flask
 
-3. Запустити проект:
+4. Запустити проект:
+
 python app.py
 
 Сервер запуститься на http://127.0.0.1:5000
